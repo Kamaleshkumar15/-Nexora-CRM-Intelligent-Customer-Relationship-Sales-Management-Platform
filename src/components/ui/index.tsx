@@ -1,0 +1,16 @@
+"use client";
+import * as React from "react";
+import { cn } from "@/lib/utils";
+
+export function Button({ className, variant = "default", size = "default", ...props }: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "default" | "outline" | "ghost" | "danger"; size?: "default" | "sm" | "icon" }) {
+  const styles={default:"bg-indigo-500 text-white hover:bg-indigo-400",outline:"border border-white/10 bg-white/[.03] hover:bg-white/[.07]",ghost:"hover:bg-white/[.06]",danger:"bg-red-500/15 text-red-300 hover:bg-red-500/25"};
+  const sizes={default:"min-h-10 px-4",sm:"min-h-8 px-3 text-xs",icon:"h-9 w-9"};
+  return <button className={cn("inline-flex items-center justify-center gap-2 rounded-xl font-medium transition focus:outline-none focus:ring-2 focus:ring-indigo-400/40 disabled:cursor-not-allowed disabled:opacity-50",styles[variant],sizes[size],className)} {...props}/>;
+}
+export function Input({ className, ...props }: React.InputHTMLAttributes<HTMLInputElement>) { return <input className={cn("h-10 w-full rounded-xl border border-white/10 bg-white/[.04] px-3 text-sm text-inherit outline-none placeholder:text-slate-500 focus:border-indigo-400/60 focus:ring-2 focus:ring-indigo-400/10",className)} {...props}/>; }
+export function Textarea({ className, ...props }: React.TextareaHTMLAttributes<HTMLTextAreaElement>) { return <textarea className={cn("min-h-24 w-full rounded-xl border border-white/10 bg-white/[.04] p-3 text-sm outline-none placeholder:text-slate-500 focus:border-indigo-400/60",className)} {...props}/>; }
+export function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) { return <div className={cn("rounded-2xl border border-white/[.08] bg-slate-950/65 shadow-lg shadow-black/10",className)} {...props}/>; }
+export function Badge({ className, children }: { className?:string; children:React.ReactNode }) { return <span className={cn("inline-flex items-center rounded-full border border-white/10 bg-white/[.05] px-2.5 py-1 text-xs",className)}>{children}</span>; }
+export function Select({ className, ...props }: React.SelectHTMLAttributes<HTMLSelectElement>) { return <select className={cn("h-10 rounded-xl border border-white/10 bg-slate-950 px-3 text-sm outline-none focus:border-indigo-400/60",className)} {...props}/>; }
+export function Modal({open,title,onClose,children}:{open:boolean;title:string;onClose:()=>void;children:React.ReactNode}) { if(!open)return null; return <div className="fixed inset-0 z-50 grid place-items-center bg-black/70 p-4 backdrop-blur-sm" onMouseDown={e=>e.target===e.currentTarget&&onClose()}><div className="max-h-[92vh] w-full max-w-3xl overflow-auto rounded-3xl border border-white/10 bg-slate-950 p-5 shadow-2xl"><div className="mb-5 flex items-center justify-between"><h2 className="text-lg font-semibold">{title}</h2><Button variant="ghost" size="icon" onClick={onClose}>×</Button></div>{children}</div></div>; }
+export function Toast({message,onClose}:{message:string;onClose:()=>void}) { if(!message)return null; return <div role="status" aria-live="polite" className="fixed bottom-5 right-5 z-[80] flex max-w-sm items-center gap-3 rounded-2xl border border-emerald-400/20 bg-slate-950 px-4 py-3 text-sm text-emerald-200 shadow-2xl"><span>✓</span><span>{message}</span><button onClick={onClose}>×</button></div>; }

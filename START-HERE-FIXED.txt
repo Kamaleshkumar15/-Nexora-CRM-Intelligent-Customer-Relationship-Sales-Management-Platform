@@ -1,0 +1,23 @@
+NEXORA CRM v2.2.1 — FIXED SOURCE
+
+1. Extract this ZIP.
+2. Open the folder that directly contains package.json.
+3. PowerShell:
+
+   Test-Path .\package.json
+
+   It must return True.
+
+4. Run:
+
+   npm install
+   npm run typecheck
+   npm run build
+   npm run dev
+
+5. Open http://localhost:3000
+
+Important:
+- Do NOT run `cd Nexora-CRM` unless that folder actually exists.
+- Do NOT run `npm audit fix --force` before the app builds.
+- If TypeScript reports an error, copy the complete output.

@@ -1,0 +1,29 @@
+NEXORA CRM PROFESSIONAL v2.2
+============================
+
+IMPORTANT: Open THIS folder in VS Code. package.json is in this folder.
+
+PowerShell:
+  cd "C:\path\to\Nexora-CRM-FULL-SOURCE"
+  Test-Path .\package.json
+  npm install
+  npm run typecheck
+  npm run build
+  npm run dev
+
+Expected:
+  Test-Path .\package.json -> True
+  Local app -> http://localhost:3000
+
+If Test-Path returns False, you are one directory too high or in the wrong extracted folder.
+Use:
+  Get-ChildItem -Recurse -Filter package.json
+
+Assessment focus:
+  Next.js App Router + TypeScript + Tailwind + TanStack Query + dnd-kit
+  CRUD + advanced filtering + validation + persistence + loading/error/empty states
+
+Professional features:
+  Dashboard, Customers, Leads, Deals, Tasks, Companies, Analytics, Settings
+  Connected records, charts, Kanban DnD, AI assistant, import/export, audit,
+  calendar, email, users/roles, smart alerts, saved views, compare and accessibility.

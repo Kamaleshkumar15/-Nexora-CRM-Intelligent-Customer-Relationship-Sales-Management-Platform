@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root { --bg:#070b14; --fg:#eef2ff; --muted:#94a3b8; --panel:#0b1220; }
+*{box-sizing:border-box}html,body{min-height:100%}body{margin:0;background:radial-gradient(circle at 12% 0%,rgba(99,102,241,.14),transparent 30%),radial-gradient(circle at 88% 10%,rgba(16,185,129,.07),transparent 28%),var(--bg);color:var(--fg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}::selection{background:rgba(129,140,248,.35)}
+.light{--bg:#f5f7fb;--fg:#0f172a;--muted:#64748b;--panel:#fff;background:var(--bg);color:var(--fg)}
+.grid-bg{background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:32px 32px}
+.light .grid-bg{background-image:linear-gradient(rgba(15,23,42,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.035) 1px,transparent 1px)}
+.light .bg-slate-950\/65,.light .bg-slate-950\/80,.light .bg-slate-950{background:#fff!important}.light .border-white\/\[\.08\],.light .border-white\/\[\.07\],.light .border-white\/10{border-color:rgba(15,23,42,.09)!important}.light .text-slate-500{color:#64748b!important}.light .text-slate-400{color:#475569!important}.light .text-slate-300{color:#334155!important}.light .text-slate-100{color:#0f172a!important}.light select{background:#fff;color:#0f172a}.light input,.light textarea{background:#fff;color:#0f172a;border-color:rgba(15,23,42,.12)}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
